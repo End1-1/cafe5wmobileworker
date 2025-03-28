@@ -1,8 +1,8 @@
-name: cafe5_mworker
-description: "Mobile worker module of cafe5. Included shop check store qty, part of SmartHotel, waiter of cafe5"
+name: picassostore
+description: ""
 publish_to: 'none'
 
-version: 1.0.2+33
+version: 1.0.2+35
 
 environment:
   sdk: ^3.5.3
@@ -18,11 +18,11 @@ dependencies:
   intl: ^0.19.0
 
   http: ^1.1.2
-  flutter_bloc: ^8.1.5
+  flutter_bloc: ^9.1.0
   equatable: ^2.0.5
   mobile_scanner: ^6.0.1
   image_picker: ^1.1.2
-  flutter_slidable: ^3.1.0
+  flutter_slidable: ^4.0.0
   url_launcher: ^6.3.0
   flutter_localizations:
     sdk: flutter

@@ -58,35 +58,12 @@ class WMDashboard extends WMApp {
           model.navigation.settings, 'config', model.tr('Configuration')),
       Styling.menuButton(model.navigation.logout, 'logout', model.tr('Logout')),
     ];
-    switch (Prefs.config['dashboard']) {
-      case 'reports':
-        return menuWidgetsReports()..addAll(defaultButtons);
-      case 'store':
-        return menuWidgetsStore()..addAll(defaultButtons);
-      case 'hotel':
-        return menuWidgetsHotel()..addAll(defaultButtons);
-      case 'elinarep':
-        return menuWidgetsElinarep()..addAll(defaultButtons);
-      default:
-        return defaultButtons;
-    }
+
+    return menuWidgetsStore()..addAll(defaultButtons);
   }
 
   @override
   Widget body() {
-    switch (Prefs.config['dashboard']) {
-      case 'reports':
-        return bodyReports();
-      case 'store':
-        return bodyStore();
-      case 'hotel':
-        return bodyHotel();
-      case 'waiter':
-        return bodyWaiter();
-      case 'elinarep':
-        return bodyElinaRep();
-      default:
-        return Container();
-    }
+    return bodyStore();
   }
 }

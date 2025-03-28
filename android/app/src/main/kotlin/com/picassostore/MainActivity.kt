@@ -1,4 +1,4 @@
-package com.example.cafe5_mworker
+package com.picassostore
 
 import io.flutter.embedding.android.FlutterActivity
 

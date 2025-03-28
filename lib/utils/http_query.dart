@@ -20,7 +20,7 @@ class HttpQuery {
     inData['config'] = prefs.string('config');
     inData['workingday'] = prefs.dateMySqlText(prefs.workingDay());
     inData['language'] = 'am';
-    inData['debug'] = 1;
+    inData['debug'] = false && kDebugMode;
 
     Map<String, Object?> outData = {};
     String strBody = jsonEncode(inData);

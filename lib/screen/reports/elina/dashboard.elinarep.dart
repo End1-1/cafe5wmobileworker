@@ -116,6 +116,7 @@ extension DashboardElineRep on WMDashboard {
                                           style: const TextStyle(
                                               fontWeight: FontWeight.bold))),
                                 ]),
+                                //TOTALS HEADER
                                 const SizedBox(height: 30),
                                 Row(children: [
                                   Text(locale().amountTotal,
@@ -133,6 +134,8 @@ extension DashboardElineRep on WMDashboard {
                                       width: 100, child: Text(locale().cash)),
                                   SizedBox(
                                       width: 150, child: Text(locale().card)),
+                                  SizedBox(
+                                      width: 150, child: Text(locale().bank)),
                                   SizedBox(
                                       width: 150, child: Text(locale().fiscal)),
                                   SizedBox(width: 150, child: Text("%")),
@@ -161,6 +164,10 @@ extension DashboardElineRep on WMDashboard {
                                         width: 150,
                                         child: Text(
                                             prefs.number(e['f_amountcard']))),
+                                    SizedBox(
+                                        width: 150,
+                                        child: Text(
+                                            prefs.number(e['f_amountbank']))),
                                     SizedBox(
                                         width: 150,
                                         child:
@@ -291,6 +298,7 @@ extension DashboardElineRep on WMDashboard {
     var total = 0.0,
         cash = 0.0,
         card = 0.0,
+    bank = 0.0,
         prepaid = 0.0,
         fiscal = 0.0,
         disc = 0.0;
@@ -298,6 +306,7 @@ extension DashboardElineRep on WMDashboard {
       total += e['f_amounttotal'];
       cash += e['f_amountcash'];
       card += e['f_amountcard'];
+      bank += e['f_amountbank'];
       fiscal += e['f_fiscal'];
       prepaid += e['f_amountprepaid'];
       disc += e['f_disc'] ?? 0;
@@ -316,6 +325,10 @@ extension DashboardElineRep on WMDashboard {
       SizedBox(
           width: 150,
           child: Text(prefs.number(card),
+              style: const TextStyle(fontWeight: FontWeight.bold))),
+      SizedBox(
+          width: 150,
+          child: Text(prefs.number(bank),
               style: const TextStyle(fontWeight: FontWeight.bold))),
       SizedBox(
           width: 150,

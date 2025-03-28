@@ -29,7 +29,7 @@ class DashboardModel {
   }
 
   void changeDate1() {
-    Calendar.show(firstDate: date1.add(const Duration(days: -365)), currentDate: date1).then((value) {
+    Calendar.show(firstDate: date1.add(const Duration(days: -365 * 3)), currentDate: date1).then((value) {
       if (value != null) {
         date1 = value;
         state();
@@ -38,7 +38,7 @@ class DashboardModel {
   }
 
   void changeDate2() {
-    Calendar.show(firstDate: date1.add(const Duration(days: -365)), currentDate: date2).then((value) {
+    Calendar.show(firstDate: date1.add(const Duration(days: -365 * 3)), currentDate: date2).then((value) {
       if (value != null) {
         date2 = value;
         state();

@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:cafe5_mworker/bloc/app_bloc.dart';
 import 'package:cafe5_mworker/bloc/app_cubits.dart';
 import 'package:cafe5_mworker/bloc/date_bloc.dart';
@@ -22,6 +20,7 @@ void main() async {
   prefs = await SharedPreferences.getInstance();
   PackageInfo pa = await PackageInfo.fromPlatform();
   prefs.setString('appversion', '${pa.version}.${pa.buildNumber}');
+  print('APPVERSION ${prefs.getString('appversion')}');
   prefs.init();
   runApp(MultiBlocProvider(providers: [
     BlocProvider<AppBloc>(create: (context) => AppBloc()),

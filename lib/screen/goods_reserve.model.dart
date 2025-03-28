@@ -24,18 +24,23 @@ extension WMEGoodsReserve on WMGoodsReserve {
       return;
     }
     Map<String, dynamic> d = {
-      'source': Prefs.config['store'] ?? 0,
-      'store': _model.reservationStore,
+      'action': 1,
+      'userfrom': Prefs.config['store'] ?? 0,
+      'userto': _model.reservationStore,
       'goods': _model.reservationGoods,
       'goodsname': _model.reservationGoodsName,
       'barcode': _model.reservationBarcode,
       'scancode': _model.reservationBarcode,
       'qty': double.tryParse(_model.reserveQtyTextController.text) ?? 0,
-      'message': _model.reserveCommentTextController.text,
+      'usermessage': _model.reserveCommentTextController.text.replaceAll('\n', ' '),
       'enddate': prefs.dateMySqlText(_model.reservationExpiration),
+      'f_enddate': prefs.dateMySqlText(_model.reservationExpiration),
+      'f_goods': _model.reservationGoods,
+      'f_qty': double.tryParse(_model.reserveQtyTextController.text) ?? 0,
+      'f_message': _model.reserveCommentTextController.text.replaceAll('\n', ' ')
     };
     BlocProvider.of<AppBloc>(prefs.context()).add(AppEventLoading(
-        model.tr('Create reservation'), 'engine/worker/create-reservation.php', d,
+        model.tr('Create reservation'), 'engine/shop/create-reserve.php', d,
             (e, s) {
           if (e) {
           } else {

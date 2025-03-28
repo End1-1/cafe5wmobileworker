@@ -27,5 +27,6 @@
   "cashbox": "Cashbox",
   "cashRemain": "Cash remains",
   "coinRemain": "Coin remains",
-  "collection": "Collection"
+  "collection": "Collection",
+  "bank": "Bank"
 }

@@ -1,6 +1,6 @@
 {
-    "name": "cafe5_mworker",
-    "short_name": "cafe5_mworker",
+    "name": "picassostore",
+    "short_name": "picassostore",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#hexcode",
