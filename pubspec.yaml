@@ -1,4 +1,4 @@
-name: picassostore
+name: cafe5_mworker
 description: ""
 publish_to: 'none'
 
@@ -15,7 +15,7 @@ dependencies:
   flutter_launcher_icons: ^0.14.1
   shared_preferences: ^2.2.2
   package_info_plus: ^8.0.2
-  intl: ^0.19.0
+  intl: any
 
   http: ^1.1.2
   flutter_bloc: ^9.1.0

@@ -53,10 +53,7 @@ class Navigation {
         MaterialPageRoute(builder: (builder) => WMCheckQty(model: model)));
   }
 
-  Future<void> checkStoreInput() {
-    hideMenu();
-    return Navigator.push(prefs.context(), MaterialPageRoute(builder: (builder) => WMCheckStoreInput(model: model)));
-  }
+
 
   Future<void> dayEnd() {
     hideMenu();
